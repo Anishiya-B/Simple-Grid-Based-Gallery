@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Photo Gallery</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery {
+      max-width: 1200px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    .gallery-item {
+      display: inline-block;
+      width: 100%;
+      margin: 0.5rem;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (min-width: 600px) {
+      .gallery-item {
+        width: calc(50% - 1rem);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .gallery-item {
+        width: calc(33.33% - 1rem);
+      }
+    }
+
+    footer {
+      background-color: #eaeaea;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Modal Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Photo Gallery</h1>
+    <p>A simple responsive grid layout with image preview.</p>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <a href="#img1" class="gallery-item"><img src="https://source.unsplash.com/600x400/?nature,water" alt="Gallery Image 1" /></a>
+      <a href="#img2" class="gallery-item"><img src="https://source.unsplash.com/600x400/?mountains" alt="Gallery Image 2" /></a>
+      <a href="#img3" class="gallery-item"><img src="https://source.unsplash.com/600x400/?forest" alt="Gallery Image 3" /></a>
+      <a href="#img4" class="gallery-item"><img src="https://source.unsplash.com/600x400/?city" alt="Gallery Image 4" /></a>
+      <a href="#img5" class="gallery-item"><img src="https://source.unsplash.com/600x400/?beach" alt="Gallery Image 5" /></a>
+      <a href="#img6" class="gallery-item"><img src="https://source.unsplash.com/600x400/?sunset" alt="Gallery Image 6" /></a>
+    </section>
+  </main>
+
+  <!-- Lightbox Viewers -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://purepng.com/public/uploads/large/purepng.com-android-smartphonepersonal-computersmartphonemobile-operating-systemcellular-phoneandroid-17015283912796apux.png" alt="Gallery Ismage 1" alt="Gallery Image 1 Large" />
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://cdn.pixabay.com/photo/2019/03/19/17/55/tab-4066426_1280.png" alt="Gallery Image 2 Large" />
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://www.chip.de/ii/4/4/5/6/9/9/3/2/d865722293c2757f.jpg" alt="Gallery Image 3 Large" />
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://www.pngall.com/wp-content/uploads/2016/04/Keyboard-Download-PNG.png" alt="Gallery Image 4 Large" />
+  </div>
+  <div id="img5" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7693.png" alt="Gallery Image 5 Large" />
+  </div>
+  <div id="img6" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="https://cdn.pixabay.com/photo/2015/03/21/19/27/pc-684125_640.jpg" alt="Gallery Image 6 Large" />
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Gallery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
